@@ -64,7 +64,6 @@ export default function OrderFlow() {
   const [selectedStore, setSelectedStore] = useState(null);
   const [cartItems, setCartItems] = useState({});  // Changed to object for quantity tracking
   const [selectedShopper, setSelectedShopper] = useState(null);
-
   const addItem = (item) => {
     setCartItems(prev => ({
       ...prev,
@@ -316,14 +315,18 @@ export default function OrderFlow() {
         )}
         {step === 5 && (
             <OrderMatching
-                store={selectedStore}
-                items={Object.entries(cartItems).map(([itemId, quantity]) => ({
-                ...findItemById(parseInt(itemId)),
-                quantity
-                }))}
-                shopper={selectedShopper}
-                onClose={() => setStep(step - 1)}
-                />
+            store={selectedStore}
+            items={Object.entries(cartItems).map(([itemId, quantity]) => ({
+              ...findItemById(parseInt(itemId)),
+              quantity
+            }))}
+            shopper={selectedShopper}
+            onClose={() => setStep(step - 1)}
+            orderDetails={{
+              subtotal: calculateTotal(),
+              items: cartItems
+            }}
+          />
         )}
       </div>
     </div>

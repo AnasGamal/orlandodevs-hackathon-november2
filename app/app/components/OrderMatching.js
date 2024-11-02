@@ -56,9 +56,9 @@ const OrderMatching = ({ orderDetails, onClose }) => {
   };
 
   const orderSummary = {
-    subtotal: orderDetails ? calculateTotal() : 50,
+    subtotal: orderDetails ? orderDetails.subtotal : 50,
     deliveryFee: priceDetails?.shared || 3.00,
-    total: orderDetails ? (calculateTotal() + (priceDetails?.shared || 3.00)) : 53.00
+    total: orderDetails ? (orderDetails.subtotal + (priceDetails?.shared || 3.00)) : 53.00
   };
 
   return (
