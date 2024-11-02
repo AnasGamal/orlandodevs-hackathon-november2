@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Logo from '@/app/assets/GroupKart.png';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const UserTypeToggle = ({ isDriver, onToggle }) => {
   return (
@@ -27,9 +28,9 @@ const Sidebar = () => {
   };
 
   const menuItems = [
-    { icon: '🚚', label: 'Deliver', role: 'Driver'},
-    { icon: '🛒', label: 'Order', role: 'Customer' },
-    { icon: '📋', label: 'Orders', role: 'All' }
+    { icon: '🚚', label: 'Deliver', role: 'Driver', url: '/deliver' },
+    { icon: '🛒', label: 'Order', role: 'Customer', url:'/order' },
+    { icon: '📋', label: 'Orders', role: 'All', url:'/' }
   ];
 
   // Filter menu items based on user type
@@ -54,6 +55,7 @@ const Sidebar = () => {
 
       <nav className="mt-4">
         {filteredMenuItems.map((item) => (
+          <Link href={item.url} key={item.label}>
           <div
             key={item.label}
             className="flex items-center space-x-3 p-3 hover:bg-gray-100 rounded-lg cursor-pointer"
@@ -61,6 +63,7 @@ const Sidebar = () => {
             <span>{item.icon}</span>
             <span className="text-gray-700">{item.label}</span>
           </div>
+          </Link>
         ))}
       </nav>
 
