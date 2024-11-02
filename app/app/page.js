@@ -53,11 +53,11 @@ export default function DashboardClient() {
   const [selectedOrder, setSelectedOrder] = useState(null)
 
   return (
-    <div className="flex h-screen bg-gray-100">
-      <div className="flex-1 p-6 space-y-6">
-        <div className="grid grid-cols-2 gap-6 h-[calc(100vh-3rem)]">
+    <div className="h-screen overflow-hidden">
+      <div className="h-full p-6">
+        <div className="grid grid-cols-2 gap-6 h-full">
           {/* First column: Order List */}
-          <div>
+          <div className="overflow-auto">
             <OrderList
               orders={sampleOrders}
               onSelectOrder={setSelectedOrder}
@@ -66,16 +66,16 @@ export default function DashboardClient() {
           </div>
           
           {/* Second column: Map and Driver Info */}
-          <div className="space-y-6">
-            <div className="h-2/3 rounded-lg overflow-hidden">
+          <div className="flex flex-col gap-6 h-full">
+            <div className="flex-grow rounded-lg overflow-hidden">
               <Map selectedOrder={selectedOrder} orders={sampleOrders} />
             </div>
-            <div className="h-1/3">
+            <div className="h-1/3 min-h-[300px]">
               <DriverInfo driver={sampleDriver} />
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

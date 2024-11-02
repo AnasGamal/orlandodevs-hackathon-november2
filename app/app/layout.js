@@ -23,15 +23,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <div className="flex h-screen bg-gray-100">
-          {/* Sidebar will be permanent here */}
+        <div className="flex min-h-screen bg-gray-300">
           <Sidebar />
-          {/* Main content area */}
           <main className="flex-1">
             {children}
           </main>
         </div>
       </body>
     </html>
-  )
+  );
 }
