@@ -9,10 +9,10 @@ export default function DriverInfo({ driver }) {
           <p className="text-gray-500">{driver.role}</p>
         </div>
         <div className="flex space-x-2">
-          <button className="px-4 py-2 bg-green-500 text-white rounded-lg">
+          <button className="px-4 py-2 bg-green-500 text-white rounded-3xl">
             Call
           </button>
-          <button className="px-4 py-2 border rounded-lg text-gray-500">
+          <button className="px-4 py-2 border rounded-3xl text-gray-500">
             Chat
           </button>
         </div>

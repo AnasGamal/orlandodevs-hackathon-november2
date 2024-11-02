@@ -34,6 +34,15 @@ export default function Sidebar() {
           </div>
         ))}
       </nav>
+        <div className="absolute bottom-0 mb-4">
+            <div className="flex items-center space-x-2">
+            <span className="text-gray-400">Logged in as</span>
+            <span className="text-gray-700 font-semibold">Ian Wu</span>
+            </div>
+            <button className="w-full px-4 py-2 bg-green-400 text-white rounded-3xl mt-2">
+            Logout
+            </button>
+        </div>
     </div>
   )
 }
