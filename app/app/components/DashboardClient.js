@@ -57,16 +57,23 @@ export default function DashboardClient() {
       <Sidebar />
       <div className="flex-1 p-6 space-y-6">
         <div className="grid grid-cols-2 gap-6 h-[calc(100vh-3rem)]">
-          <OrderList 
-            orders={sampleOrders} 
-            onSelectOrder={setSelectedOrder}
-            selectedOrder={selectedOrder}
-          />
+          {/* First column: Order List */}
+          <div>
+            <OrderList
+              orders={sampleOrders}
+              onSelectOrder={setSelectedOrder}
+              selectedOrder={selectedOrder}
+            />
+          </div>
+          
+          {/* Second column: Map and Driver Info */}
           <div className="space-y-6">
             <div className="h-2/3 rounded-lg overflow-hidden">
               <Map selectedOrder={selectedOrder} orders={sampleOrders} />
             </div>
-            <DriverInfo driver={sampleDriver} />
+            <div className="h-1/3">
+              <DriverInfo driver={sampleDriver} />
+            </div>
           </div>
         </div>
       </div>
