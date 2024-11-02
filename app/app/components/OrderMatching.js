@@ -69,11 +69,11 @@ const OrderMatching = ({ orderDetails, onClose }) => {
         <div className="p-6 space-y-6">
           {!matched ? (
             <div className="text-center space-y-4">
-              <div className="w-16 h-16 border-4 border-indigo-600 border-t-transparent rounded-full animate-spin mx-auto" />
+              <div className="w-16 h-16 border-4 border-green-600 border-t-transparent rounded-full animate-spin mx-auto" />
               <h2 className="text-xl font-semibold text-gray-900">Finding your delivery driver...</h2>
               <div className="w-full bg-gray-200 rounded-full h-2">
                 <div 
-                  className="bg-indigo-600 h-2 rounded-full transition-all duration-500"
+                  className="bg-green-600 h-2 rounded-full transition-all duration-500"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -154,7 +154,7 @@ const OrderMatching = ({ orderDetails, onClose }) => {
                   Close
                 </button>
                 <button
-                  className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
                   onClick={() => window.location.href = '/'}
                 >
                   Track Order

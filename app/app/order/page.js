@@ -106,7 +106,7 @@ export default function OrderFlow() {
           <button
             key={store.id}
             className={`p-4 border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow ${
-              selectedStore?.id === store.id ? 'border-indigo-500 ring-2 ring-indigo-200' : 'border-gray-200'
+              selectedStore?.id === store.id ? 'border-green-500 ring-2 ring-green-200' : 'border-gray-200'
             }`}
             onClick={() => setSelectedStore(store)}
           >
@@ -204,7 +204,7 @@ export default function OrderFlow() {
           <button
             key={shopper.id}
             className={`p-4 border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow ${
-              selectedShopper?.id === shopper.id ? 'border-indigo-500 ring-2 ring-indigo-200' : 'border-gray-200'
+              selectedShopper?.id === shopper.id ? 'border-green-500 ring-2 ring-green-200' : 'border-gray-200'
             }`}
             onClick={() => setSelectedShopper(shopper)}
           >
@@ -299,7 +299,7 @@ export default function OrderFlow() {
         )}
         {step < 4 && selectedStore && (
           <button
-            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 shadow-sm ml-auto"
+            className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 shadow-sm ml-auto"
             onClick={() => setStep(step + 1)}
           >
             Continue
