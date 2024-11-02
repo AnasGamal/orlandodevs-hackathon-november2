@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react';
 import { Search, ShoppingCart, Clock, Store } from 'lucide-react';
+import OrderMatching from '@/app/components/OrderMatching';
 
 // Updated hardcoded data with prices
 const STORES = [
@@ -308,10 +309,21 @@ export default function OrderFlow() {
         {step === 4 && (
           <button
             className="px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 shadow-sm ml-auto"
-            onClick={() => alert('Order placed!')}
+            onClick={() => setStep(step + 1)}
           >
             Place Order
           </button>
+        )}
+        {step === 5 && (
+            <OrderMatching
+                store={selectedStore}
+                items={Object.entries(cartItems).map(([itemId, quantity]) => ({
+                ...findItemById(parseInt(itemId)),
+                quantity
+                }))}
+                shopper={selectedShopper}
+                onClose={() => setStep(step - 1)}
+                />
         )}
       </div>
     </div>
