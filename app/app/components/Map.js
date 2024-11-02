@@ -13,6 +13,12 @@ export default function Map({ selectedOrder, orders }) {
   const markers = useRef({})
 
   useEffect(() => {
+    if (!mapboxgl.supported()) {
+      return alert('Your browser does not support Mapbox GL')
+    }
+    if (!mapboxgl.accessToken) {
+      return
+    }
     if (!map.current) {
       map.current = new mapboxgl.Map({
         container: mapContainer.current,
