@@ -54,7 +54,7 @@ const FOOD_CATEGORIES = [
 ];
 
 const ACTIVE_SHOPPERS = [
-  { id: 1, name: "Sarah M.", store: "Walmart", deliveryTime: "2-4 PM" },
+  { id: 1, name: "Anas A.", store: "Walmart", deliveryTime: "2-4 PM" },
   { id: 2, name: "John D.", store: "Publix", deliveryTime: "3-5 PM" },
   { id: 3, name: "Mike R.", store: "Walmart", deliveryTime: "4-6 PM" }
 ];
