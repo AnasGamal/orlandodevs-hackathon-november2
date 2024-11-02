@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, Phone, Star, Leaf } from 'lucide-react';
+import DriverPhoto from '@/app/assets/driver-01.jpeg';
+import Image from 'next/image';
 
 const OrderMatching = ({ orderDetails, onClose }) => {
   const [progress, setProgress] = useState(0);
@@ -30,7 +32,7 @@ const OrderMatching = ({ orderDetails, onClose }) => {
       const flatFee = 2.00;
       
       const regularPrice = (distanceKm * pricePerKm + flatFee).toFixed(2);
-      const numCustomers = 2;
+      const numCustomers = 5;
       const sharedPrice = ((distanceKm * pricePerKm / numCustomers) + flatFee).toFixed(2);
       
       return {
@@ -46,13 +48,13 @@ const OrderMatching = ({ orderDetails, onClose }) => {
   }, []);
 
   const driverInfo = {
-    name: "Michael Rodriguez",
+    name: "Anas Aly",
     rating: 4.9,
     totalDeliveries: 1248,
     phone: "(555) 123-4567",
     vehicle: "Toyota Camry",
     licensePlate: "ABC 123",
-    photo: "/api/placeholder/64/64"
+    photo: DriverPhoto
   };
 
   const orderSummary = {
@@ -79,7 +81,7 @@ const OrderMatching = ({ orderDetails, onClose }) => {
           ) : (
             <div className="space-y-6">
               <div className="flex items-center space-x-4 pb-4 border-b">
-                <img
+                <Image
                   src={driverInfo.photo}
                   alt={driverInfo.name}
                   className="w-16 h-16 rounded-full"

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Logo from '@/app/assets/GroupKart.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import UserPhoto from '@/app/assets/user-01.jpeg';
 
 const UserTypeToggle = ({ isDriver, onToggle }) => {
   return (
@@ -69,6 +70,7 @@ const Sidebar = () => {
 
       <div className="absolute bottom-0 left-0 right-0 p-4">
         <div className="flex items-center space-x-2">
+          <Image src={UserPhoto} alt="Ian Wu" className="w-10 h-10 rounded-full" />
           <span className="text-gray-400">Logged in as</span>
           <span className="text-gray-700 font-semibold">Ian Wu</span>
         </div>
