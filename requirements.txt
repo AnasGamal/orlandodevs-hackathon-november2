@@ -1,0 +1,1 @@
+FastAPI & Uvicorn is required to run the API
